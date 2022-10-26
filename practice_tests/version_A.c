@@ -66,6 +66,7 @@ int main(void) {
                         case 'b':
                         case 'B':
                             discount = 9.5;
+                            break;
                     }
 
                     amount *= noDays;
