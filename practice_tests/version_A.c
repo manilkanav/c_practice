@@ -49,31 +49,35 @@ int main(void) {
 
                 printf("Enter Reward Card Type (G/ S/ B): ");
                 scanf(" %c", &cardType);
-
-                switch (cardType)
-                {
-                case 'g':
-                case 'G':
-                    discount = 12.5;
-                    break;
                 
-                case 's':
-                case 'S':
-                    discount = 11.5;
-                    break;
+                if (cardType == 'G' || cardType == 'g' || cardType == 'S' || cardType == 's' || cardType == 'B' || cardType == 'b') {
+                    
+                    switch (cardType) {
+                        case 'g':
+                        case 'G':
+                            discount = 12.5;
+                            break;
+                        
+                        case 's':
+                        case 'S':
+                            discount = 11.5;
+                            break;
 
-                case 'b':
-                case 'B':
-                    discount = 9.5;
+                        case 'b':
+                        case 'B':
+                            discount = 9.5;
+                    }
 
-                default:
-                    break;
+                    amount *= noDays;
+                    amount -= amount * discount / 100;
+
+                    printf("Amount (Rs): %.2f\n", amount);
                 }
 
-                amount *= noDays;
-                amount -= amount * discount / 100;
-
-                printf("Amount (Rs): %.2f\n", amount);
+                else {
+                    printf("Invalid card type\n");
+                }
+                
             }
             
             else {
