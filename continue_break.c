@@ -17,10 +17,5 @@ int main(void) {
 
     if (count == 10)
         printf("Noooo\n");
-
-
-
-  
-
-    
+        
 }
