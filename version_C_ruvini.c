@@ -66,17 +66,22 @@ int main(void)
 				
 				amount *= Npizza;
 				
-				printf("Do you need any extra toppings (y/n) : \n");
-	 			scanf(" %c",&choice);
+				choice = 'y';
 	 		
-			 	while(choice == 'y'|| choice == 'Y')
+			 	while(choice != 'n' && choice != 'N')
 			 	
 	 			{
-					printf("Input your option : ");
-					scanf("%d", &option);
-					
-					if(option == 1 || option == 2 || option == 3 || option == 4)
-					{
+	 				printf("Do you need any extra toppings (y/n) : ");
+	 				scanf(" %c",&choice);
+	 				
+	 				if (choice == 'Y' || choice == 'y' || choice == 'N' || choice == 'n') {
+	 					
+	 					if ( choice == 'N' || choice == 'n') break;
+	 					
+						printf("Input your option : ");
+						scanf("%d", &option);
+						
+						
 						switch(option){
 							case 1 : amount += 320 *Npizza;
 							break;
@@ -88,19 +93,20 @@ int main(void)
 							break;
 							
 							case 4 : amount += 150 *Npizza;
-							break;										
-					}
-					
-				}	
-					else 
-						printf("Enter valid option\n");
+							break;
+							
+							default:
+								printf("Enter valid topping option!\n");
+								continue;										
+						}
+				}
+				else
+					printf("Enter valid option\n");
 						
-					printf("Do you need any extra toppings (y/n) : \n");
-	 				scanf(" %c",&choice);		
-	    		}
 				
-				printf("Total Price Rs : %.2f\n",amount);				
 			}
+			printf("Total Price Rs : %.2f\n",amount);				
+		}
 		    else
 				printf("---Enter valid size---\n");			
 	} 
