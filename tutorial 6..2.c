@@ -19,7 +19,7 @@ int main(void)
 	temp = a[0];
 	for(i = 0; i < 4; i++)
 		a[i] = a[i+1];
-		a[4] = temp;
+	a[4] = temp;
 	
 	printf("\nAfter Rotating\t\t");
 	for(i = 0; i < 5; ++i)
