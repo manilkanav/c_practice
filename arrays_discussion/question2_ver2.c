@@ -3,7 +3,7 @@
 int main(void) {
     float item[] = {90.0, 20.0, 55.0}, sale[3];
     int qtySold[3], i, minSaleItem;
-    float minSale, totalSale;
+    
 
     for(i = 0; i < 3; i++) {
         printf("Enter quantity sold of item %d : ", i + 1);
@@ -13,12 +13,10 @@ int main(void) {
     }
 
 
-    minSale = sale[0];
-    minSaleItem = 1;
+    minSaleItem = 0;
     for(i = 1; i < 3; i++) {
-        if(minSale > sale[i]) {
-            minSale = sale[i];
-            minSaleItem = i + 1;
+        if(sale[minSaleItem] > sale[i]) {
+             minSaleItem = i;
         }
             
     }
@@ -33,7 +31,7 @@ int main(void) {
         printf("%d ", qtySold[i]);
     puts("");
 
-    printf("Minimum income product: %d\n", minSaleItem);
+    printf("Minimum income product: %d\n", minSaleItem + 1);
     return 0;
 }
 
