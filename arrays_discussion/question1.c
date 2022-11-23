@@ -30,7 +30,6 @@ int main(void) {
     printf("Number of correct answer: %d\n", correct);
 
     return 0;
-
 }
 
 
