@@ -1,21 +1,24 @@
 #include <stdio.h>
 
-
-float discountedPrice(float price); // Function prototype
-
+void printStar(int n);
 
 int main(void) {
-    float total = 1000.00;
-
-    float discount = discountedPrice(total);
-    printf("%.2f\n", discount);
     
+    printStar(4);
+
+    puts("\n");
+
+    printStar(5);
+
     return 0;
 }
 
+void printStar(int n) {
+    int i, j;
 
-float discountedPrice(float price) {
-    float discount = price * 0.1;
-
-    return price - discount;
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) 
+            printf("* ");
+        puts("");
+    }
 }
